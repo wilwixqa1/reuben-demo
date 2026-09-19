@@ -7,857 +7,792 @@
   <meta name="description" content="Ruben Yosopov is a Suffolk County real estate agent serving Ronkonkoma, Lake Ronkonkoma, Holbrook, Centereach, Bohemia, and surrounding Long Island communities.">
   <meta name="keywords" content="Ronkonkoma real estate, Lake Ronkonkoma homes for sale, Suffolk County realtor, Holbrook NY homes, Centereach real estate agent, Bohemia NY homes, Long Island real estate">
   <meta property="og:title" content="Ruben Yosopov — Suffolk County Real Estate">
-  <meta property="og:description" content="Your local Suffolk County real estate expert. Buying, selling, or just exploring — Ruben knows these neighborhoods inside and out.">
+  <meta property="og:description" content="Your local Suffolk County real estate expert. Buying, selling, or just exploring — Ruben knows these neighborhoods.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-primary: #1E3048;
-      --color-accent: #B8926A;
-      --color-bg: #FAFBFC;
-      --color-white: #FFFFFF;
-      --color-text: #3A3F47;
-      --color-text-light: #6B7280;
-      --color-section-alt: #F0F2F5;
-      --color-cta: #2E6B4F;
-      --color-cta-hover: #245A42;
-      --color-border: #E2E5EA;
-      --font-display: 'Lora', Georgia, serif;
-      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --slate: #1a2332;
+      --slate-mid: #2a3a4e;
+      --ink: #0f1419;
+      --sand: #f4f0eb;
+      --sand-dark: #e8e2d9;
+      --warm: #c2956b;
+      --warm-light: #d4ae88;
+      --green: #3d6b52;
+      --green-dark: #2e5440;
+      --text: #2c3038;
+      --text-secondary: #6b7180;
+      --white: #ffffff;
+      --border: #ddd8d0;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: var(--font-body);
-      color: var(--color-text);
-      background: var(--color-bg);
-      line-height: 1.65;
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--sand);
+      line-height: 1.6;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
     }
-
-    img { max-width: 100%; height: auto; display: block; }
+    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    /* ---- HEADER ---- */
-    .site-header {
-      background: var(--color-white);
-      border-bottom: 1px solid var(--color-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* ---------- HEADER ---------- */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
     }
     .header-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; max-width: 1100px; margin: 0 auto; padding: 0 24px;
     }
-    .site-logo {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      letter-spacing: -0.01em;
+    .logo {
+      font-family: var(--serif); font-size: 1.35rem;
+      color: var(--slate); font-style: italic;
     }
-    .site-logo span { color: var(--color-accent); }
-    .header-nav { display: flex; gap: 28px; align-items: center; }
-    .header-nav a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--color-text-light);
-      transition: color 0.2s;
+    .nav { display: flex; align-items: center; gap: 24px; }
+    .nav a { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); transition: color 0.15s; }
+    .nav a:hover { color: var(--slate); }
+    .nav-cta {
+      background: var(--green); color: var(--white) !important;
+      padding: 8px 20px; border-radius: 6px; font-weight: 600;
+      transition: background 0.15s;
     }
-    .header-nav a:hover { color: var(--color-primary); }
-    .header-cta {
-      background: var(--color-cta);
-      color: var(--color-white) !important;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.2s;
+    .nav-cta:hover { background: var(--green-dark); }
+    .menu-btn {
+      display: none; background: none; border: none; cursor: pointer; padding: 6px;
     }
-    .header-cta:hover { background: var(--color-cta-hover); }
+    .menu-btn svg { width: 22px; height: 22px; stroke: var(--slate); }
 
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-    .mobile-menu-btn svg { width: 24px; height: 24px; stroke: var(--color-primary); }
-
-    /* ---- HERO ---- */
+    /* ---------- HERO ---------- */
     .hero {
-      background: var(--color-primary);
-      color: var(--color-white);
-      padding: 80px 24px 88px;
+      background: var(--slate);
       position: relative;
       overflow: hidden;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, rgba(30,48,72,1), rgba(30,48,72,0));
-      pointer-events: none;
+    .hero-bg {
+      position: absolute; inset: 0; opacity: 0.06;
+      background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,0.5) 48%, rgba(255,255,255,0.5) 52%, transparent 52%),
+        linear-gradient(-30deg, transparent 48%, rgba(255,255,255,0.5) 48%, rgba(255,255,255,0.5) 52%, transparent 52%);
+      background-size: 60px 100px;
     }
-    .hero-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
+    .hero-layout {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 48px; align-items: center;
+      padding: 80px 0 88px;
+      max-width: 1100px; margin: 0 auto; padding-left: 24px; padding-right: 24px;
     }
-    .hero-eyebrow {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      margin-bottom: 16px;
-      letter-spacing: 0.04em;
+    .hero-text { color: var(--white); }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--warm); letter-spacing: 0.06em;
+      border: 1px solid rgba(194,149,107,0.3);
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 24px;
     }
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
       letter-spacing: -0.02em;
+      margin-bottom: 20px;
     }
-    .hero p {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.78);
-      max-width: 560px;
+    .hero h1 em { font-style: italic; color: var(--warm-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65);
+      max-width: 440px; line-height: 1.65;
       margin-bottom: 32px;
     }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: var(--font-body);
-      cursor: pointer;
-      border: none;
-      transition: background 0.2s, transform 0.1s;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 600; font-family: var(--sans);
+      border: none; cursor: pointer; transition: all 0.15s;
     }
     .btn:active { transform: scale(0.97); }
-    .btn-primary { background: var(--color-cta); color: var(--color-white); }
-    .btn-primary:hover { background: var(--color-cta-hover); }
-    .btn-outline {
-      background: transparent;
-      color: var(--color-white);
-      border: 1.5px solid rgba(255,255,255,0.35);
+    .btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .btn-green { background: var(--green); color: var(--white); }
+    .btn-green:hover { background: var(--green-dark); }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
     }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
-    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .btn-warm { background: var(--warm); color: var(--white); }
+    .btn-warm:hover { background: #b5875e; }
 
-    /* ---- COMMUNITIES ---- */
-    .communities {
-      padding: 72px 24px;
-      background: var(--color-white);
+    /* hero search card */
+    .hero-search {
+      background: var(--white); border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header {
-      margin-bottom: 40px;
-      max-width: 560px;
+    .hero-search h3 {
+      font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+      color: var(--slate); margin-bottom: 18px;
     }
-    .section-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
+    .search-fields { display: flex; flex-direction: column; gap: 10px; }
+    .search-field select, .search-field input {
+      width: 100%; padding: 11px 14px;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 0.9rem; font-family: var(--sans);
+      background: var(--sand); color: var(--text);
     }
-    .section-header p {
-      color: var(--color-text-light);
-      font-size: 1rem;
+    .search-field select:focus, .search-field input:focus {
+      outline: none; border-color: var(--warm);
     }
-    .community-grid {
+    .search-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .search-btn {
+      width: 100%; margin-top: 4px;
+      padding: 12px; border-radius: 8px;
+      background: var(--slate); color: var(--white);
+      border: none; font-family: var(--sans);
+      font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .search-btn:hover { background: var(--ink); }
+
+    /* ---------- TRUST BAR ---------- */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+    .trust-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.85rem; color: var(--text-secondary);
+    }
+    .trust-item svg { width: 18px; height: 18px; stroke: var(--green); fill: none; flex-shrink: 0; }
+    .trust-item strong { color: var(--text); font-weight: 600; }
+
+    /* ---------- COMMUNITIES ---------- */
+    .communities { padding: 72px 0; }
+    .section-top {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 36px; flex-wrap: wrap; gap: 12px;
+    }
+    .section-top h2 {
+      font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400; color: var(--slate);
+    }
+    .section-top p { color: var(--text-secondary); font-size: 0.9rem; max-width: 400px; }
+    .comm-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
-    .community-card {
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
+    .comm-card {
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 20px 18px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      padding: 22px 18px;
+      transition: border-color 0.15s, box-shadow 0.15s;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .community-card:hover {
-      border-color: var(--color-accent);
-      box-shadow: 0 2px 12px rgba(184,146,106,0.12);
+    .comm-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--warm);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
     }
-    .community-card h3 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      margin-bottom: 4px;
+    .comm-card:hover::before { transform: scaleX(1); }
+    .comm-card:hover {
+      border-color: var(--warm);
+      box-shadow: 0 4px 16px rgba(194,149,107,0.1);
     }
-    .community-card p {
-      font-size: 0.8rem;
-      color: var(--color-text-light);
+    .comm-card h3 {
+      font-family: var(--serif); font-size: 1.05rem; font-weight: 400;
+      color: var(--slate); margin-bottom: 8px;
+    }
+    .comm-meta {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .comm-meta span {
+      font-size: 0.78rem; color: var(--text-secondary);
+    }
+    .comm-meta .price {
+      font-weight: 600; color: var(--green); font-size: 0.85rem;
     }
 
-    /* ---- SERVICES ---- */
-    .services {
-      padding: 72px 24px;
-      background: var(--color-section-alt);
+    /* ---------- ABOUT ---------- */
+    .about {
+      padding: 72px 0;
     }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+    .about-layout {
+      display: grid; grid-template-columns: 300px 1fr;
+      gap: 56px; align-items: start;
     }
-    .service-card {
-      background: var(--color-white);
-      border-radius: 12px;
-      padding: 36px 28px;
-      border: 1px solid var(--color-border);
-    }
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: rgba(46,107,79,0.08);
+    .about-photo {
+      background: var(--slate-mid);
+      border-radius: 14px;
+      aspect-ratio: 3/4;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-photo-placeholder {
+      color: rgba(255,255,255,0.2);
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+    .about-photo-accent {
+      position: absolute; bottom: -1px; left: 0; right: 0;
+      height: 4px; background: var(--warm);
+    }
+    .about-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--slate);
       margin-bottom: 20px;
     }
-    .service-icon svg { width: 24px; height: 24px; stroke: var(--color-cta); fill: none; }
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 10px;
-    }
-    .service-card p {
-      color: var(--color-text-light);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* ---- WHY RUBEN ---- */
-    .why-section {
-      padding: 72px 24px;
-      background: var(--color-white);
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .why-content h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      color: var(--color-primary);
+    .about-text p {
+      color: var(--text-secondary);
+      line-height: 1.75;
       margin-bottom: 16px;
-      letter-spacing: -0.01em;
+      max-width: 540px;
     }
-    .why-content p {
-      color: var(--color-text-light);
-      margin-bottom: 24px;
-      line-height: 1.7;
+    .about-text p:last-of-type { margin-bottom: 28px; }
+    .about-stats {
+      display: flex; gap: 32px; padding-top: 24px;
+      border-top: 1px solid var(--border);
     }
-    .why-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .why-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+    .about-stat .num {
+      font-family: var(--serif); font-size: 2rem;
+      color: var(--slate); line-height: 1;
     }
-    .why-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(46,107,79,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .why-check svg { width: 12px; height: 12px; stroke: var(--color-cta); }
-    .why-list li span { font-size: 0.95rem; line-height: 1.5; }
-
-    .why-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .stat-card {
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .stat-card .number {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-card .label {
-      font-size: 0.82rem;
-      color: var(--color-text-light);
+    .about-stat .lbl {
+      font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;
     }
 
-    /* ---- TESTIMONIALS ---- */
-    .testimonials {
-      padding: 72px 24px;
-      background: var(--color-primary);
-      color: var(--color-white);
+    /* ---------- SERVICES ---------- */
+    .services {
+      padding: 72px 0;
+      background: var(--white);
     }
-    .testimonials .section-header h2 { color: var(--color-white); }
-    .testimonials .section-header p { color: rgba(255,255,255,0.6); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .services-inner { padding: 72px 24px; max-width: 1100px; margin: 0 auto; }
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-    .testimonial-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+    .svc-card {
+      background: var(--sand);
+      border-radius: 12px;
+      padding: 32px 24px;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .svc-card:hover { border-color: var(--border); }
+    .svc-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--white); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .svc-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; }
+    .svc-card h3 {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+      color: var(--slate); margin-bottom: 10px;
+    }
+    .svc-card p {
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials { padding: 72px 0; }
+    .test-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .test-card {
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 28px 24px;
     }
-    .testimonial-stars {
-      color: var(--color-accent);
-      font-size: 0.875rem;
-      margin-bottom: 14px;
-      letter-spacing: 2px;
+    .test-card.featured {
+      grid-row: span 2;
+      background: var(--slate);
+      color: var(--white);
+      border-color: transparent;
+      display: flex; flex-direction: column; justify-content: center;
     }
-    .testimonial-card blockquote {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.85);
+    .test-stars { color: var(--warm); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .test-card blockquote {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1rem; line-height: 1.6;
       margin-bottom: 16px;
-      font-style: italic;
-      font-family: var(--font-display);
     }
-    .testimonial-author {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      font-weight: 500;
+    .test-card.featured blockquote {
+      font-size: 1.2rem; line-height: 1.5;
+      color: rgba(255,255,255,0.9);
     }
+    .test-author { font-size: 0.8rem; color: var(--text-secondary); font-weight: 500; }
+    .test-card.featured .test-author { color: rgba(255,255,255,0.4); }
 
-    /* ---- MORTGAGE CALCULATOR ---- */
-    .calculator-section {
-      padding: 72px 24px;
-      background: var(--color-section-alt);
+    /* ---------- CALCULATOR ---------- */
+    .calculator {
+      padding: 72px 0;
+      background: var(--white);
     }
-    .calculator-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+    .calc-inner { padding: 72px 24px; max-width: 1100px; margin: 0 auto; }
+    .calc-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: start;
     }
-    .calc-form { display: flex; flex-direction: column; gap: 16px; }
-    .calc-field label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--color-text-light);
-      margin-bottom: 6px;
+    .calc-form { display: flex; flex-direction: column; gap: 14px; }
+    .calc-label {
+      display: block; font-size: 0.8rem; font-weight: 600;
+      color: var(--text-secondary); margin-bottom: 5px;
     }
-    .calc-field input, .calc-field select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: var(--font-body);
-      background: var(--color-white);
-      color: var(--color-text);
-      transition: border-color 0.2s;
+    .calc-input {
+      width: 100%; padding: 12px 14px;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 1rem; font-family: var(--sans);
+      background: var(--sand); color: var(--text);
     }
-    .calc-field input:focus, .calc-field select:focus {
-      outline: none;
-      border-color: var(--color-accent);
+    .calc-input:focus { outline: none; border-color: var(--warm); background: var(--white); }
+    .calc-result-card {
+      background: var(--slate); color: var(--white);
+      border-radius: 14px; padding: 36px 28px;
     }
-    .calc-result {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 36px 28px;
-      text-align: center;
+    .calc-result-label {
+      font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 6px;
     }
-    .calc-result .result-label {
-      font-size: 0.875rem;
-      color: var(--color-text-light);
-      margin-bottom: 8px;
+    .calc-result-num {
+      font-family: var(--serif); font-size: 3rem;
+      font-weight: 400; line-height: 1; margin-bottom: 28px;
     }
-    .calc-result .result-amount {
-      font-family: var(--font-display);
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .calc-breakdown { text-align: left; }
-    .calc-breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--color-border);
+    .calc-rows {}
+    .calc-row {
+      display: flex; justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       font-size: 0.9rem;
     }
-    .calc-breakdown-row:last-child { border-bottom: none; }
-    .calc-breakdown-row .row-label { color: var(--color-text-light); }
-    .calc-breakdown-row .row-value { font-weight: 600; color: var(--color-text); }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row .rl { color: rgba(255,255,255,0.5); }
+    .calc-row .rv { font-weight: 600; }
 
-    /* ---- CONTACT ---- */
-    .contact-section {
-      padding: 72px 24px;
-      background: var(--color-white);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    /* ---------- CONTACT ---------- */
+    .contact { padding: 72px 0 80px; }
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
       gap: 48px;
     }
-    .contact-info h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      color: var(--color-primary);
+    .contact-left h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400; color: var(--slate);
       margin-bottom: 12px;
     }
-    .contact-info > p {
-      color: var(--color-text-light);
-      margin-bottom: 28px;
-      line-height: 1.6;
+    .contact-left > p {
+      color: var(--text-secondary); line-height: 1.65;
+      margin-bottom: 32px; max-width: 420px;
     }
-    .contact-methods { display: flex; flex-direction: column; gap: 16px; }
-    .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .contact-method-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(46,107,79,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+    .c-method { display: flex; align-items: center; gap: 14px; }
+    .c-method-icon {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--white); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .contact-method-icon svg { width: 20px; height: 20px; stroke: var(--color-cta); fill: none; }
-    .contact-method-text .method-label {
-      font-size: 0.78rem;
-      color: var(--color-text-light);
-      font-weight: 500;
+    .c-method-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; }
+    .c-method-label { font-size: 0.75rem; color: var(--text-secondary); }
+    .c-method-value { font-weight: 600; color: var(--slate); font-size: 1rem; }
+    .contact-form {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 12px;
     }
-    .contact-method-text .method-value {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--color-primary);
-    }
-    .contact-form { display: flex; flex-direction: column; gap: 14px; }
     .contact-form input, .contact-form textarea, .contact-form select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text);
-      transition: border-color 0.2s;
+      width: 100%; padding: 12px 14px;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 0.9rem; font-family: var(--sans);
+      background: var(--sand); color: var(--text);
     }
     .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
-      outline: none;
-      border-color: var(--color-accent);
-      background: var(--color-white);
+      outline: none; border-color: var(--warm); background: var(--white);
     }
-    .contact-form textarea { resize: vertical; min-height: 100px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-    /* ---- FOOTER ---- */
-    .site-footer {
-      background: var(--color-primary);
-      color: rgba(255,255,255,0.5);
-      padding: 40px 24px;
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: var(--slate); color: rgba(255,255,255,0.4);
+      padding: 36px 24px;
     }
     .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
     }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--color-white);
-      font-size: 1.1rem;
+    .footer-brand {
+      font-family: var(--serif); font-style: italic;
+      color: var(--white); font-size: 1.1rem;
     }
-    .footer-logo span { color: var(--color-accent); }
-    .footer-links { display: flex; gap: 20px; font-size: 0.82rem; }
-    .footer-links a { transition: color 0.2s; }
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
-    .footer-legal {
-      width: 100%;
-      text-align: center;
-      font-size: 0.75rem;
-      padding-top: 24px;
-      margin-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+    .footer-links { display: flex; gap: 20px; font-size: 0.8rem; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-bottom {
+      width: 100%; text-align: center; font-size: 0.72rem;
+      padding-top: 20px; margin-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      line-height: 1.5;
     }
 
-    /* ---- MOBILE STICKY BAR ---- */
+    /* ---------- MOBILE BAR ---------- */
     .mobile-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      background: var(--color-white);
-      border-top: 1px solid var(--color-border);
-      padding: 10px 16px;
-      gap: 10px;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 200; background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px; gap: 10px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
     }
     .mobile-bar a {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
     }
     .mobile-bar a svg { width: 18px; height: 18px; }
-    .mobile-bar .bar-call {
-      background: var(--color-cta);
-      color: var(--color-white);
-    }
-    .mobile-bar .bar-text {
-      background: var(--color-primary);
-      color: var(--color-white);
-    }
+    .bar-call { background: var(--green); color: var(--white); }
+    .bar-text { background: var(--slate); color: var(--white); }
 
-    /* ---- RESPONSIVE ---- */
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 56px; }
+      .hero-search { max-width: 400px; }
+      .comm-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-photo { max-width: 280px; aspect-ratio: 1; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .test-grid { grid-template-columns: 1fr; }
+      .test-card.featured { grid-row: auto; }
+      .calc-layout, .contact-layout { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
-      .header-nav { display: none; }
-      .mobile-menu-btn { display: block; }
-      .hero { padding: 56px 24px 64px; }
-      .why-grid, .calculator-wrapper, .contact-grid { grid-template-columns: 1fr; }
-      .why-stats { order: -1; }
-      .community-grid { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .nav { display: none; }
+      .menu-btn { display: block; }
       .mobile-bar { display: flex; }
       body { padding-bottom: 72px; }
+      .trust-inner { gap: 20px; }
+      .about-stats { gap: 20px; flex-wrap: wrap; }
+      .form-row { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; }
     }
-
     @media (max-width: 480px) {
-      .community-grid { grid-template-columns: 1fr; }
-      .why-stats { grid-template-columns: 1fr 1fr; }
+      .comm-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-
-    /* Focus styles */
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    textarea:focus-visible, select:focus-visible {
+      outline: 2px solid var(--warm); outline-offset: 2px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+  <header class="header">
     <div class="header-inner">
-      <a href="#" class="site-logo">Ruben Yosopov<span>.</span></a>
-      <nav class="header-nav">
+      <a href="#" class="logo">Ruben Yosopov</a>
+      <nav class="nav">
         <a href="#communities">Communities</a>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#calculator">Calculator</a>
-        <a href="#contact">Contact</a>
-        <a href="tel:+16315551234" class="header-cta">Call Ruben</a>
+        <a href="#contact" class="nav-cta">Contact Ruben</a>
       </nav>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
+      <button class="menu-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">Suffolk County Real Estate</div>
-      <h1>You deserve an agent who actually knows your neighborhood.</h1>
-      <p>Ruben Yosopov helps buyers and sellers across central Suffolk County. Every listing on the MLS, local market insight, and an agent who picks up the phone.</p>
-      <div class="hero-actions">
-        <a href="tel:+16315551234" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call now
-        </a>
-        <a href="sms:+16315551234" class="btn btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Text Ruben
-        </a>
+    <div class="hero-bg"></div>
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-tag">Suffolk County, Long Island</div>
+        <h1>Find your next home with someone who <em>actually lives here.</em></h1>
+        <p class="hero-sub">Every listing on the Long Island MLS, real local market knowledge, and an agent who picks up the phone.</p>
+        <div class="hero-btns">
+          <a href="tel:+16315551234" class="btn btn-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Ruben
+          </a>
+          <a href="sms:+16315551234" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text me
+          </a>
+        </div>
+      </div>
+      <div class="hero-search">
+        <h3>Search properties</h3>
+        <div class="search-fields">
+          <div class="search-field">
+            <select>
+              <option value="" disabled selected>Community</option>
+              <option>Ronkonkoma</option>
+              <option>Lake Ronkonkoma</option>
+              <option>Holbrook</option>
+              <option>Bohemia</option>
+              <option>Centereach</option>
+              <option>Farmingville</option>
+              <option>Hauppauge</option>
+              <option>Holtsville</option>
+              <option>Patchogue</option>
+              <option>Selden</option>
+              <option>Nesconset</option>
+              <option>Sayville</option>
+              <option>Smithtown</option>
+            </select>
+          </div>
+          <div class="search-row">
+            <div class="search-field">
+              <select>
+                <option value="" disabled selected>Min price</option>
+                <option>$200,000</option>
+                <option>$300,000</option>
+                <option>$400,000</option>
+                <option>$500,000</option>
+                <option>$600,000</option>
+                <option>$750,000</option>
+                <option>$1,000,000</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <select>
+                <option value="" disabled selected>Max price</option>
+                <option>$400,000</option>
+                <option>$500,000</option>
+                <option>$600,000</option>
+                <option>$750,000</option>
+                <option>$1,000,000</option>
+                <option>$1,500,000</option>
+                <option>No max</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-row">
+            <div class="search-field">
+              <select>
+                <option value="" disabled selected>Beds</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+                <option>5+</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <select>
+                <option value="" disabled selected>Baths</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+              </select>
+            </div>
+          </div>
+          <button class="search-btn" onclick="alert('Demo: this would connect to the Long Island MLS via IDX.')">Search listings</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED COMMUNITIES -->
-  <section class="communities" id="communities">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Communities I serve</h2>
-        <p>Deep local knowledge across central Suffolk County. Click any community to see current listings.</p>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Full <strong>Long Island MLS</strong> access</span>
       </div>
-      <div class="community-grid">
-        <a class="community-card" href="#">
-          <h3>Ronkonkoma</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Lake Ronkonkoma</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Holbrook</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Bohemia</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Centereach</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Farmingville</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Hauppauge</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Holtsville</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Patchogue</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Selden</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Nesconset</h3>
-          <p>View active listings</p>
-        </a>
-        <a class="community-card" href="#">
-          <h3>Sayville</h3>
-          <p>View active listings</p>
-        </a>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Licensed <strong>NY State</strong> agent</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>200+ families</strong> helped</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>Suffolk County</strong> born & raised</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMUNITIES -->
+  <section class="communities" id="communities">
+    <div class="container">
+      <div class="section-top">
+        <div>
+          <h2>Neighborhoods I know</h2>
+          <p>Real local insight for every community I serve. Click to see current listings.</p>
+        </div>
+      </div>
+      <div class="comm-grid">
+        <a class="comm-card" href="#"><h3>Ronkonkoma</h3><div class="comm-meta"><span class="price">Median $485k</span><span>Sachem / Connetquot schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Lake Ronkonkoma</h3><div class="comm-meta"><span class="price">Median $510k</span><span>Sachem schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Holbrook</h3><div class="comm-meta"><span class="price">Median $465k</span><span>Sachem schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Bohemia</h3><div class="comm-meta"><span class="price">Median $475k</span><span>Connetquot schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Centereach</h3><div class="comm-meta"><span class="price">Median $490k</span><span>Middle Country schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Farmingville</h3><div class="comm-meta"><span class="price">Median $500k</span><span>Sachem schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Hauppauge</h3><div class="comm-meta"><span class="price">Median $560k</span><span>Hauppauge schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Holtsville</h3><div class="comm-meta"><span class="price">Median $470k</span><span>Sachem schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Patchogue</h3><div class="comm-meta"><span class="price">Median $440k</span><span>Patchogue-Medford schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Selden</h3><div class="comm-meta"><span class="price">Median $455k</span><span>Middle Country schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Nesconset</h3><div class="comm-meta"><span class="price">Median $530k</span><span>Smithtown schools</span></div></a>
+        <a class="comm-card" href="#"><h3>Sayville</h3><div class="comm-meta"><span class="price">Median $540k</span><span>Sayville schools</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-photo">
+          <div class="about-photo-placeholder">Ruben's<br>headshot<br>goes here</div>
+          <div class="about-photo-accent"></div>
+        </div>
+        <div class="about-text">
+          <h2>About Ruben</h2>
+          <p>I grew up on Long Island and I've spent my career helping people buy and sell homes in the communities I know best. Central Suffolk County isn't just where I work. It's where I live, where I shop, where I get my hair cut.</p>
+          <p>I got into real estate because I saw too many agents treat it like a transaction instead of a relationship. When you work with me, you get my cell number, not a call center. I'll tell you what a house is actually worth, even when it's not what you want to hear. And I'll be around long after the closing.</p>
+          <p>If you're thinking about buying, selling, or just curious what your place is worth, give me a call. No pitch, no pressure.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="num">12+</div>
+              <div class="lbl">Years in real estate</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">200+</div>
+              <div class="lbl">Families helped</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">14</div>
+              <div class="lbl">Communities served</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>How I help</h2>
-        <p>Whether you're buying your first home, selling, or just curious what your place is worth.</p>
+    <div class="services-inner">
+      <div class="section-top">
+        <div>
+          <h2>How I help</h2>
+          <p>Whether you're buying your first home, selling, or just curious about the market.</p>
+        </div>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <h3>Buying a home</h3>
-          <p>Full MLS access with every listing from every agent. Set up alerts for new listings and price changes in the communities you care about, and tour homes on your schedule.</p>
+          <p>Full MLS access with every listing from every agent in the area. Set up alerts for new listings and price drops in the neighborhoods you care about, and tour homes on your schedule.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <h3>Selling your home</h3>
-          <p>Accurate pricing based on real local comp data, professional photography, and a marketing plan built around where Suffolk County buyers actually search.</p>
+          <p>Accurate pricing from real local comps, professional photography, and a marketing strategy built around where Suffolk County buyers actually search. Not a Zillow estimate and a yard sign.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
           <h3>Free market evaluation</h3>
-          <p>Wondering what your home is worth in today's market? Get a no-obligation analysis based on recent sales in your neighborhood.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY RUBEN -->
-  <section class="why-section">
-    <div class="section-inner">
-      <div class="why-grid">
-        <div class="why-content">
-          <h2>Why work with Ruben</h2>
-          <p>Buying or selling a home is one of the biggest financial decisions you'll make. You want someone who knows the local market, answers when you call, and doesn't disappear after the open house.</p>
-          <ul class="why-list">
-            <li>
-              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Born and raised on Long Island. I know these neighborhoods because I live here.</span>
-            </li>
-            <li>
-              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>Every active listing on the Long Island MLS, updated daily. No need to check multiple sites.</span>
-            </li>
-            <li>
-              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>You get my cell number. Text me at 10pm about a listing, I'll text you back.</span>
-            </li>
-            <li>
-              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <span>No pressure, no gimmicks. I'll tell you what a house is actually worth, not what you want to hear.</span>
-            </li>
-          </ul>
-        </div>
-        <div class="why-stats">
-          <div class="stat-card">
-            <div class="number">12+</div>
-            <div class="label">Years in Suffolk County real estate</div>
-          </div>
-          <div class="stat-card">
-            <div class="number">200+</div>
-            <div class="label">Families helped buy or sell</div>
-          </div>
-          <div class="stat-card">
-            <div class="number">98%</div>
-            <div class="label">Client satisfaction rate</div>
-          </div>
-          <div class="stat-card">
-            <div class="number">14</div>
-            <div class="label">Communities served</div>
-          </div>
+          <p>Wondering what your home is worth right now? Get a no-obligation analysis based on recent sales in your neighborhood, not an algorithm. Call me and I'll walk you through the numbers.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>What clients say</h2>
-        <p>Real reviews from real homeowners across Suffolk County.</p>
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-top">
+        <div>
+          <h2>What clients say</h2>
+          <p>Real reviews from homeowners across Suffolk County.</p>
+        </div>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"Ruben made selling our home in Ronkonkoma so much easier than we expected. He priced it right, we had multiple offers in the first week, and he walked us through every step."</blockquote>
-          <div class="testimonial-author">Maria & James T., Ronkonkoma</div>
+      <div class="test-grid">
+        <div class="test-card featured">
+          <div class="test-stars">★★★★★</div>
+          <blockquote>"We were first-time buyers with a million questions. Ruben never rushed us, never pushed us toward something we couldn't afford. He found us a place in Holbrook that was under budget and checked every box. A year later we still text him when something comes up with the house."</blockquote>
+          <div class="test-author">Kevin & Priya L., Holbrook</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"We were first-time buyers and had a thousand questions. Ruben never made us feel rushed. He found us a place in Holbrook that checked every box and was under budget."</blockquote>
-          <div class="testimonial-author">Kevin L., Holbrook</div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <blockquote>"Ruben priced our Ronkonkoma home right, and we had three offers in the first week. He walked us through every step of the closing."</blockquote>
+          <div class="test-author">Maria & James T., Ronkonkoma</div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"I've worked with three agents over the years. Ruben is the first one who actually answered his phone every time I called. That alone is worth everything."</blockquote>
-          <div class="testimonial-author">Diane S., Lake Ronkonkoma</div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <blockquote>"Three agents in ten years. Ruben is the first one who answered his phone every time I called. That alone is worth everything."</blockquote>
+          <div class="test-author">Diane S., Lake Ronkonkoma</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MORTGAGE CALCULATOR -->
-  <section class="calculator-section" id="calculator">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Mortgage calculator</h2>
-        <p>Get a quick estimate of your monthly payment. Adjust the numbers to fit your situation.</p>
-      </div>
-      <div class="calculator-wrapper">
-        <div class="calc-form">
-          <div class="calc-field">
-            <label for="home-price">Home price</label>
-            <input type="text" id="home-price" value="450,000" inputmode="numeric">
-          </div>
-          <div class="calc-field">
-            <label for="down-payment">Down payment</label>
-            <input type="text" id="down-payment" value="90,000" inputmode="numeric">
-          </div>
-          <div class="calc-field">
-            <label for="interest-rate">Interest rate (%)</label>
-            <input type="text" id="interest-rate" value="6.75" inputmode="decimal">
-          </div>
-          <div class="calc-field">
-            <label for="loan-term">Loan term</label>
-            <select id="loan-term">
-              <option value="30" selected>30 years</option>
-              <option value="15">15 years</option>
-              <option value="20">20 years</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" onclick="calculateMortgage()" style="width:100%;justify-content:center;">Calculate</button>
+  <!-- CALCULATOR -->
+  <section class="calculator" id="calculator">
+    <div class="calc-inner">
+      <div class="section-top">
+        <div>
+          <h2>Mortgage calculator</h2>
+          <p>Estimate your monthly payment. Adjust the numbers to fit your situation.</p>
         </div>
-        <div class="calc-result">
-          <div class="result-label">Estimated monthly payment</div>
-          <div class="result-amount" id="monthly-payment">$2,334</div>
-          <div class="calc-breakdown">
-            <div class="calc-breakdown-row">
-              <span class="row-label">Principal & interest</span>
-              <span class="row-value" id="pi-amount">$2,334</span>
-            </div>
-            <div class="calc-breakdown-row">
-              <span class="row-label">Loan amount</span>
-              <span class="row-value" id="loan-amount">$360,000</span>
-            </div>
-            <div class="calc-breakdown-row">
-              <span class="row-label">Total interest paid</span>
-              <span class="row-value" id="total-interest">$480,240</span>
-            </div>
+      </div>
+      <div class="calc-layout">
+        <div class="calc-form">
+          <div><label class="calc-label" for="hp">Home price</label><input class="calc-input" type="text" id="hp" value="450,000" inputmode="numeric"></div>
+          <div><label class="calc-label" for="dp">Down payment</label><input class="calc-input" type="text" id="dp" value="90,000" inputmode="numeric"></div>
+          <div><label class="calc-label" for="ir">Interest rate (%)</label><input class="calc-input" type="text" id="ir" value="6.75" inputmode="decimal"></div>
+          <div><label class="calc-label" for="lt">Loan term</label><select class="calc-input" id="lt"><option value="30" selected>30 years</option><option value="15">15 years</option><option value="20">20 years</option></select></div>
+          <button class="btn btn-green" onclick="calc()" style="width:100%;justify-content:center;margin-top:4px;">Calculate</button>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">Estimated monthly payment</div>
+          <div class="calc-result-num" id="mp">$2,334</div>
+          <div class="calc-rows">
+            <div class="calc-row"><span class="rl">Principal & interest</span><span class="rv" id="pi">$2,334</span></div>
+            <div class="calc-row"><span class="rl">Loan amount</span><span class="rv" id="la">$360,000</span></div>
+            <div class="calc-row"><span class="rl">Total interest paid</span><span class="rv" id="ti">$480,240</span></div>
           </div>
         </div>
       </div>
@@ -865,131 +800,79 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div class="section-inner">
-      <div class="contact-grid">
-        <div class="contact-info">
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left">
           <h2>Let's talk</h2>
-          <p>Whether you're ready to make a move or just have questions about the market, I'm here. Call, text, or fill out the form and I'll get back to you within a few hours.</p>
+          <p>Ready to make a move, or just have questions? Call, text, or send me a message and I'll get back to you within a few hours.</p>
           <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div class="contact-method-text">
-                <div class="method-label">Call or text</div>
-                <a href="tel:+16315551234" class="method-value">(631) 555-1234</a>
-              </div>
+            <div class="c-method">
+              <div class="c-method-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><div class="c-method-label">Call or text</div><a href="tel:+16315551234" class="c-method-value">(631) 555-1234</a></div>
             </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="contact-method-text">
-                <div class="method-label">Email</div>
-                <a href="mailto:ruben@example.com" class="method-value">ruben@example.com</a>
-              </div>
+            <div class="c-method">
+              <div class="c-method-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><div class="c-method-label">Email</div><a href="mailto:ruben@example.com" class="c-method-value">ruben@example.com</a></div>
             </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">
-                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div class="contact-method-text">
-                <div class="method-label">Serving</div>
-                <div class="method-value">Suffolk County, Long Island</div>
-              </div>
+            <div class="c-method">
+              <div class="c-method-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div class="c-method-label">Serving</div><div class="c-method-value">Suffolk County, Long Island</div></div>
             </div>
           </div>
         </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo: form submitted.');">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo: message sent.');">
           <div class="form-row">
             <input type="text" placeholder="First name" required>
             <input type="text" placeholder="Last name" required>
           </div>
-          <input type="email" placeholder="Email address" required>
-          <input type="tel" placeholder="Phone number">
-          <select>
-            <option value="" disabled selected>I'm interested in...</option>
-            <option>Buying a home</option>
-            <option>Selling my home</option>
-            <option>Free market evaluation</option>
-            <option>General question</option>
-          </select>
+          <input type="email" placeholder="Email" required>
+          <input type="tel" placeholder="Phone">
+          <select><option value="" disabled selected>I'm interested in...</option><option>Buying a home</option><option>Selling my home</option><option>Free market evaluation</option><option>General question</option></select>
           <textarea placeholder="Tell me a little about what you're looking for..."></textarea>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send message</button>
+          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;">Send message</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-logo">Ruben Yosopov<span>.</span></div>
+      <div class="footer-brand">Ruben Yosopov</div>
       <div class="footer-links">
         <a href="#communities">Communities</a>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#calculator">Calculator</a>
         <a href="#contact">Contact</a>
-        <a href="#">Privacy Policy</a>
+        <a href="#">Privacy</a>
         <a href="#">Fair Housing</a>
       </div>
-      <div class="footer-legal">
-        &copy; 2026 Ruben Yosopov. All rights reserved. Licensed real estate salesperson, State of New York. Equal Housing Opportunity.
+      <div class="footer-bottom">
+        &copy; 2026 Ruben Yosopov. Licensed real estate salesperson, State of New York. Equal Housing Opportunity.
       </div>
     </div>
   </footer>
 
-  <!-- MOBILE STICKY BAR -->
   <div class="mobile-bar">
-    <a href="tel:+16315551234" class="bar-call">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call
-    </a>
-    <a href="sms:+16315551234" class="bar-text">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Text
-    </a>
+    <a href="tel:+16315551234" class="bar-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    <a href="sms:+16315551234" class="bar-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
   </div>
 
-  <!-- MORTGAGE CALCULATOR SCRIPT -->
   <script>
-    function parseNumber(str) {
-      return parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
+    function pn(s){return parseFloat(s.replace(/[^0-9.]/g,''))||0}
+    function fc(n){return '$'+Math.round(n).toLocaleString('en-US')}
+    function calc(){
+      var p=pn(document.getElementById('hp').value),d=pn(document.getElementById('dp').value),
+          r=pn(document.getElementById('ir').value),y=parseInt(document.getElementById('lt').value),
+          pr=p-d,mr=r/100/12,n=y*12,m;
+      if(mr===0){m=pr/n}else{m=pr*(mr*Math.pow(1+mr,n))/(Math.pow(1+mr,n)-1)}
+      var t=m*n,ti=t-pr;
+      document.getElementById('mp').textContent=fc(m);
+      document.getElementById('pi').textContent=fc(m);
+      document.getElementById('la').textContent=fc(pr);
+      document.getElementById('ti').textContent=fc(ti);
     }
-
-    function formatCurrency(num) {
-      return '$' + Math.round(num).toLocaleString('en-US');
-    }
-
-    function calculateMortgage() {
-      const price = parseNumber(document.getElementById('home-price').value);
-      const down = parseNumber(document.getElementById('down-payment').value);
-      const rateInput = parseNumber(document.getElementById('interest-rate').value);
-      const years = parseInt(document.getElementById('loan-term').value);
-
-      const principal = price - down;
-      const monthlyRate = rateInput / 100 / 12;
-      const numPayments = years * 12;
-
-      let monthly;
-      if (monthlyRate === 0) {
-        monthly = principal / numPayments;
-      } else {
-        monthly = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
-      }
-
-      const totalPaid = monthly * numPayments;
-      const totalInterest = totalPaid - principal;
-
-      document.getElementById('monthly-payment').textContent = formatCurrency(monthly);
-      document.getElementById('pi-amount').textContent = formatCurrency(monthly);
-      document.getElementById('loan-amount').textContent = formatCurrency(principal);
-      document.getElementById('total-interest').textContent = formatCurrency(totalInterest);
-    }
-
-    // Calculate on load
-    calculateMortgage();
+    calc();
   </script>
 </body>
 </html>
