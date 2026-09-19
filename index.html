@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruben Yosopov — Suffolk County Real Estate</title>
+  <meta name="description" content="Ruben Yosopov is a Suffolk County real estate agent serving Ronkonkoma, Lake Ronkonkoma, Holbrook, Centereach, Bohemia, and surrounding Long Island communities.">
+  <meta name="keywords" content="Ronkonkoma real estate, Lake Ronkonkoma homes for sale, Suffolk County realtor, Holbrook NY homes, Centereach real estate agent, Bohemia NY homes, Long Island real estate">
+  <meta property="og:title" content="Ruben Yosopov — Suffolk County Real Estate">
+  <meta property="og:description" content="Your local Suffolk County real estate expert. Buying, selling, or just exploring — Ruben knows these neighborhoods inside and out.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1E3048;
+      --color-accent: #B8926A;
+      --color-bg: #FAFBFC;
+      --color-white: #FFFFFF;
+      --color-text: #3A3F47;
+      --color-text-light: #6B7280;
+      --color-section-alt: #F0F2F5;
+      --color-cta: #2E6B4F;
+      --color-cta-hover: #245A42;
+      --color-border: #E2E5EA;
+      --font-display: 'Lora', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .site-logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+    .site-logo span { color: var(--color-accent); }
+    .header-nav { display: flex; gap: 28px; align-items: center; }
+    .header-nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-light);
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--color-primary); }
+    .header-cta {
+      background: var(--color-cta);
+      color: var(--color-white) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: var(--color-cta-hover); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .mobile-menu-btn svg { width: 24px; height: 24px; stroke: var(--color-primary); }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 80px 24px 88px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(30,48,72,1), rgba(30,48,72,0));
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--color-cta); color: var(--color-white); }
+    .btn-primary:hover { background: var(--color-cta-hover); }
+    .btn-outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 1.5px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ---- COMMUNITIES ---- */
+    .communities {
+      padding: 72px 24px;
+      background: var(--color-white);
+    }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-header {
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .section-header p {
+      color: var(--color-text-light);
+      font-size: 1rem;
+    }
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .community-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 20px 18px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .community-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 2px 12px rgba(184,146,106,0.12);
+    }
+    .community-card h3 {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .community-card p {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+
+    /* ---- SERVICES ---- */
+    .services {
+      padding: 72px 24px;
+      background: var(--color-section-alt);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 36px 28px;
+      border: 1px solid var(--color-border);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(46,107,79,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--color-cta); fill: none; }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ---- WHY RUBEN ---- */
+    .why-section {
+      padding: 72px 24px;
+      background: var(--color-white);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .why-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .why-content p {
+      color: var(--color-text-light);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .why-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .why-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(46,107,79,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-check svg { width: 12px; height: 12px; stroke: var(--color-cta); }
+    .why-list li span { font-size: 0.95rem; line-height: 1.5; }
+
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .stat-card .number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-card .label {
+      font-size: 0.82rem;
+      color: var(--color-text-light);
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials {
+      padding: 72px 24px;
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+    .testimonials .section-header h2 { color: var(--color-white); }
+    .testimonials .section-header p { color: rgba(255,255,255,0.6); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+    .testimonial-stars {
+      color: var(--color-accent);
+      font-size: 0.875rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+    .testimonial-author {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    /* ---- MORTGAGE CALCULATOR ---- */
+    .calculator-section {
+      padding: 72px 24px;
+      background: var(--color-section-alt);
+    }
+    .calculator-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .calc-form { display: flex; flex-direction: column; gap: 16px; }
+    .calc-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      margin-bottom: 6px;
+    }
+    .calc-field input, .calc-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      background: var(--color-white);
+      color: var(--color-text);
+      transition: border-color 0.2s;
+    }
+    .calc-field input:focus, .calc-field select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .calc-result {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .calc-result .result-label {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      margin-bottom: 8px;
+    }
+    .calc-result .result-amount {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .calc-breakdown { text-align: left; }
+    .calc-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.9rem;
+    }
+    .calc-breakdown-row:last-child { border-bottom: none; }
+    .calc-breakdown-row .row-label { color: var(--color-text-light); }
+    .calc-breakdown-row .row-value { font-weight: 600; color: var(--color-text); }
+
+    /* ---- CONTACT ---- */
+    .contact-section {
+      padding: 72px 24px;
+      background: var(--color-white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .contact-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .contact-info > p {
+      color: var(--color-text-light);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .contact-methods { display: flex; flex-direction: column; gap: 16px; }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-method-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(46,107,79,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-method-icon svg { width: 20px; height: 20px; stroke: var(--color-cta); fill: none; }
+    .contact-method-text .method-label {
+      font-size: 0.78rem;
+      color: var(--color-text-light);
+      font-weight: 500;
+    }
+    .contact-method-text .method-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      background: var(--color-white);
+    }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--color-primary);
+      color: rgba(255,255,255,0.5);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-white);
+      font-size: 1.1rem;
+    }
+    .footer-logo span { color: var(--color-accent); }
+    .footer-links { display: flex; gap: 20px; font-size: 0.82rem; }
+    .footer-links a { transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-legal {
+      width: 100%;
+      text-align: center;
+      font-size: 0.75rem;
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ---- MOBILE STICKY BAR ---- */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      padding: 10px 16px;
+      gap: 10px;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    .mobile-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .mobile-bar a svg { width: 18px; height: 18px; }
+    .mobile-bar .bar-call {
+      background: var(--color-cta);
+      color: var(--color-white);
+    }
+    .mobile-bar .bar-text {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .hero { padding: 56px 24px 64px; }
+      .why-grid, .calculator-wrapper, .contact-grid { grid-template-columns: 1fr; }
+      .why-stats { order: -1; }
+      .community-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .mobile-bar { display: flex; }
+      body { padding-bottom: 72px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .community-grid { grid-template-columns: 1fr; }
+      .why-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="site-logo">Ruben Yosopov<span>.</span></a>
+      <nav class="header-nav">
+        <a href="#communities">Communities</a>
+        <a href="#services">Services</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+16315551234" class="header-cta">Call Ruben</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Suffolk County Real Estate</div>
+      <h1>You deserve an agent who actually knows your neighborhood.</h1>
+      <p>Ruben Yosopov helps buyers and sellers across central Suffolk County. Every listing on the MLS, local market insight, and an agent who picks up the phone.</p>
+      <div class="hero-actions">
+        <a href="tel:+16315551234" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call now
+        </a>
+        <a href="sms:+16315551234" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text Ruben
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COMMUNITIES -->
+  <section class="communities" id="communities">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Communities I serve</h2>
+        <p>Deep local knowledge across central Suffolk County. Click any community to see current listings.</p>
+      </div>
+      <div class="community-grid">
+        <a class="community-card" href="#">
+          <h3>Ronkonkoma</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Lake Ronkonkoma</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Holbrook</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Bohemia</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Centereach</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Farmingville</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Hauppauge</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Holtsville</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Patchogue</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Selden</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Nesconset</h3>
+          <p>View active listings</p>
+        </a>
+        <a class="community-card" href="#">
+          <h3>Sayville</h3>
+          <p>View active listings</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>How I help</h2>
+        <p>Whether you're buying your first home, selling, or just curious what your place is worth.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Buying a home</h3>
+          <p>Full MLS access with every listing from every agent. Set up alerts for new listings and price changes in the communities you care about, and tour homes on your schedule.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Selling your home</h3>
+          <p>Accurate pricing based on real local comp data, professional photography, and a marketing plan built around where Suffolk County buyers actually search.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Free market evaluation</h3>
+          <p>Wondering what your home is worth in today's market? Get a no-obligation analysis based on recent sales in your neighborhood.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RUBEN -->
+  <section class="why-section">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div class="why-content">
+          <h2>Why work with Ruben</h2>
+          <p>Buying or selling a home is one of the biggest financial decisions you'll make. You want someone who knows the local market, answers when you call, and doesn't disappear after the open house.</p>
+          <ul class="why-list">
+            <li>
+              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Born and raised on Long Island. I know these neighborhoods because I live here.</span>
+            </li>
+            <li>
+              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Every active listing on the Long Island MLS, updated daily. No need to check multiple sites.</span>
+            </li>
+            <li>
+              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>You get my cell number. Text me at 10pm about a listing, I'll text you back.</span>
+            </li>
+            <li>
+              <div class="why-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>No pressure, no gimmicks. I'll tell you what a house is actually worth, not what you want to hear.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="why-stats">
+          <div class="stat-card">
+            <div class="number">12+</div>
+            <div class="label">Years in Suffolk County real estate</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">200+</div>
+            <div class="label">Families helped buy or sell</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">98%</div>
+            <div class="label">Client satisfaction rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">14</div>
+            <div class="label">Communities served</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>What clients say</h2>
+        <p>Real reviews from real homeowners across Suffolk County.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Ruben made selling our home in Ronkonkoma so much easier than we expected. He priced it right, we had multiple offers in the first week, and he walked us through every step."</blockquote>
+          <div class="testimonial-author">Maria & James T., Ronkonkoma</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"We were first-time buyers and had a thousand questions. Ruben never made us feel rushed. He found us a place in Holbrook that checked every box and was under budget."</blockquote>
+          <div class="testimonial-author">Kevin L., Holbrook</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"I've worked with three agents over the years. Ruben is the first one who actually answered his phone every time I called. That alone is worth everything."</blockquote>
+          <div class="testimonial-author">Diane S., Lake Ronkonkoma</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORTGAGE CALCULATOR -->
+  <section class="calculator-section" id="calculator">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Mortgage calculator</h2>
+        <p>Get a quick estimate of your monthly payment. Adjust the numbers to fit your situation.</p>
+      </div>
+      <div class="calculator-wrapper">
+        <div class="calc-form">
+          <div class="calc-field">
+            <label for="home-price">Home price</label>
+            <input type="text" id="home-price" value="450,000" inputmode="numeric">
+          </div>
+          <div class="calc-field">
+            <label for="down-payment">Down payment</label>
+            <input type="text" id="down-payment" value="90,000" inputmode="numeric">
+          </div>
+          <div class="calc-field">
+            <label for="interest-rate">Interest rate (%)</label>
+            <input type="text" id="interest-rate" value="6.75" inputmode="decimal">
+          </div>
+          <div class="calc-field">
+            <label for="loan-term">Loan term</label>
+            <select id="loan-term">
+              <option value="30" selected>30 years</option>
+              <option value="15">15 years</option>
+              <option value="20">20 years</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" onclick="calculateMortgage()" style="width:100%;justify-content:center;">Calculate</button>
+        </div>
+        <div class="calc-result">
+          <div class="result-label">Estimated monthly payment</div>
+          <div class="result-amount" id="monthly-payment">$2,334</div>
+          <div class="calc-breakdown">
+            <div class="calc-breakdown-row">
+              <span class="row-label">Principal & interest</span>
+              <span class="row-value" id="pi-amount">$2,334</span>
+            </div>
+            <div class="calc-breakdown-row">
+              <span class="row-label">Loan amount</span>
+              <span class="row-value" id="loan-amount">$360,000</span>
+            </div>
+            <div class="calc-breakdown-row">
+              <span class="row-label">Total interest paid</span>
+              <span class="row-value" id="total-interest">$480,240</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Let's talk</h2>
+          <p>Whether you're ready to make a move or just have questions about the market, I'm here. Call, text, or fill out the form and I'll get back to you within a few hours.</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <div class="method-label">Call or text</div>
+                <a href="tel:+16315551234" class="method-value">(631) 555-1234</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <div class="method-label">Email</div>
+                <a href="mailto:ruben@example.com" class="method-value">ruben@example.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <div class="method-label">Serving</div>
+                <div class="method-value">Suffolk County, Long Island</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo: form submitted.');">
+          <div class="form-row">
+            <input type="text" placeholder="First name" required>
+            <input type="text" placeholder="Last name" required>
+          </div>
+          <input type="email" placeholder="Email address" required>
+          <input type="tel" placeholder="Phone number">
+          <select>
+            <option value="" disabled selected>I'm interested in...</option>
+            <option>Buying a home</option>
+            <option>Selling my home</option>
+            <option>Free market evaluation</option>
+            <option>General question</option>
+          </select>
+          <textarea placeholder="Tell me a little about what you're looking for..."></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Ruben Yosopov<span>.</span></div>
+      <div class="footer-links">
+        <a href="#communities">Communities</a>
+        <a href="#services">Services</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Fair Housing</a>
+      </div>
+      <div class="footer-legal">
+        &copy; 2026 Ruben Yosopov. All rights reserved. Licensed real estate salesperson, State of New York. Equal Housing Opportunity.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="mobile-bar">
+    <a href="tel:+16315551234" class="bar-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a href="sms:+16315551234" class="bar-text">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text
+    </a>
+  </div>
+
+  <!-- MORTGAGE CALCULATOR SCRIPT -->
+  <script>
+    function parseNumber(str) {
+      return parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function formatCurrency(num) {
+      return '$' + Math.round(num).toLocaleString('en-US');
+    }
+
+    function calculateMortgage() {
+      const price = parseNumber(document.getElementById('home-price').value);
+      const down = parseNumber(document.getElementById('down-payment').value);
+      const rateInput = parseNumber(document.getElementById('interest-rate').value);
+      const years = parseInt(document.getElementById('loan-term').value);
+
+      const principal = price - down;
+      const monthlyRate = rateInput / 100 / 12;
+      const numPayments = years * 12;
+
+      let monthly;
+      if (monthlyRate === 0) {
+        monthly = principal / numPayments;
+      } else {
+        monthly = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+      }
+
+      const totalPaid = monthly * numPayments;
+      const totalInterest = totalPaid - principal;
+
+      document.getElementById('monthly-payment').textContent = formatCurrency(monthly);
+      document.getElementById('pi-amount').textContent = formatCurrency(monthly);
+      document.getElementById('loan-amount').textContent = formatCurrency(principal);
+      document.getElementById('total-interest').textContent = formatCurrency(totalInterest);
+    }
+
+    // Calculate on load
+    calculateMortgage();
+  </script>
+</body>
+</html>
